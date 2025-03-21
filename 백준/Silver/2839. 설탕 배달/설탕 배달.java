@@ -14,8 +14,7 @@ class Main {
 
         // DP로 모든 경우 계산
         for (int i = 6; i <= n; i++) {
-            if (i >= 3) arr[i] = Math.min(arr[i], arr[i - 3] + 1);
-            if (i >= 5) arr[i] = Math.min(arr[i], arr[i - 5] + 1);
+            arr[i] = Math.min(arr[i], Math.min(arr[i - 3], arr[i - 5]) + 1);
         }
 
         System.out.println(arr[n] >= 10000 ? -1 : arr[n]);
